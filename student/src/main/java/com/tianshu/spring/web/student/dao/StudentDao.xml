@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianshu.spring.web.student.dao.StudentDao">
+    <select id="selectStudents" resultType="com.tianshu.spring.web.student.beans.Student">
+        SELECT id,name,age FROM student
+    </select>
+    <insert id="insertStudent">
+        INSERT INTO student(name,age) VALUES(#{name},#{age})
+    </insert>
+</mapper>

@@ -1,0 +1,4 @@
+# Project exclude paths
+/spring-mybatis/target/
+/student/target/
+/third-select/target/

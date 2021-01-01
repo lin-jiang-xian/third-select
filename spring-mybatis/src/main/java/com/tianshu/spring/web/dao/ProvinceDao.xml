@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tianshu.spring.web.dao.ProvinceDao">
+    <select id="selectAllProvince" resultType="com.tianshu.spring.web.domain.Province">
+        SELECT id,name FROM province
+    </select>
+
+    <select id="selectCities" resultType="com.tianshu.spring.web.domain.City">
+        SELECT id,name,pid FROM city WHERE pid=#{id}
+    </select>
+
+    <resultMap id="provinceMap" type="com.tianshu.spring.web.domain.Province">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <collection property="cities" select="selectCities" column="id" />
+    </resultMap>
+
+    <select id="selectProvinceByIdWithCities" resultMap="provinceMap">
+        SELECT id,name FROM province WHERE id=#{id}
+    </select>
+</mapper>

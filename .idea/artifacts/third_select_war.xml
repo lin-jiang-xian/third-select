@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="third-select:war">
+    <output-path>$PROJECT_DIR$/third-select/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>third-select</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="third-select-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="third-select:war exploded" />
+    </root>
+  </artifact>
+</component>
